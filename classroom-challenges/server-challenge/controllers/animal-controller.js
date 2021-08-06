@@ -4,6 +4,8 @@ let validateSession = require('../middleware/validate-session');
 var sequelize = require('../db');
 var Animal = sequelize.import('../models/animal');
 
+
+//CREATE ANIMAL ENTRY
 router.post('/create', (req, res) => {
     const animalEntry = {
         userId: req.body.userId,

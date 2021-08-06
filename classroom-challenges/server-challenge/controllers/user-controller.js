@@ -15,7 +15,7 @@ router.post('/create', (req, res) => {
         }, "i_am_secret", {
             expiresIn: 60 * 60 * 24,
         });
-        res.json({
+        res.status(200).json({
             user:user,
             message: 'user successfully created',
             sessionToken: token,
@@ -33,7 +33,8 @@ router.post('/login', function (req, res) {
                 user.password,
                 function (err, matches) {
                     if (matches){
-                        let token = jwt.sign({id: user.id}, 'i_am_secret', {
+                        let token = jwt.sign({id: user.id},
+                            'i_am_secret', {
                             expiresIn: 60 * 60 * 24,
                         });
                     res.status(200).json({
