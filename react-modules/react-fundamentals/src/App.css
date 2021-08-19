@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.App {
+  text-align: center;
+}
+
+/* BODY */
+body {
+  background-color: white;
+  font-family: 'Lato', sans-serif;
+  padding: 15px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #53565A;
+  color: white;
+  margin-top: 10px;
+}
+
+footer p {
+  margin-top: 0.8em !important;
+  margin-left: 1.5em;
+}
+
+/* main */
+.main {
+  background-color: white;
+  color: black;
+  height: 100%;
+  min-height: 100%;
+}
+
+.mainDiv {
+  margin: auto;
+  padding: 5px;
+  width: 90%;
+}
+
+.sidebar {
+  background-color: #53565A;
+  display: flex;
+  margin-top: 10px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* SIDEBAR */
+.sidebar-list-styling {
+  background-color: #53565A;
+  color: white;
+  padding-left: 50px;
+  padding-top: 15px;
+  width: 20%;
+}
+
+.sidebar-list a {
+  color: white;
+  padding: 0;
+}
+
+.sidebar-route {
+  flex: 1;
+  padding: '00px';
+}
+
+/* HEADER */
+.header {
+  background-color: #53565A;
+  color: white;
+  margin-top: 0.5em !important;
+  text-align: center;
+}
+
+.header a {
+  color: white;
+}
+
+.header p {
+  margin-top: 0.8em !important;
+}

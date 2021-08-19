@@ -19,11 +19,10 @@ app.use(express.json());
 //this app.use statement MUST go above any routes. Any routes above this statement will not be able to use the express.json() function, causing them to break
 //IMPORTANT: tells the application that we want JSON to be used as we process this request
 
-//Have endpoint of journal / practice
-//send a response from that endpoint (this is a practice route)
-//app.use('/journal', require('./controllers/journalcontroller'));
-//localhost:3000/journal
-app.use('/journal', journal);
+
+/* ***********************
+*** EXPOSED ROUTE ********
+*********************** */
 //localhost:3000/user/create
 app.use('/user', user);
 // call upon the use() method from the Express framwork and create a route to 
@@ -32,8 +31,19 @@ app.use('/user', user);
 // access a controller. The user variable is the same variable we created above 
 // and specifies which controller this endpoint is connected to.
 
+/* **********************
+**** PROTECTED ROUTE ****
+********************** */
+app.use(require('./middleware/validate-session'));
+//everything below VALIDATE-SESSION is protected
 
-app.listen(3000, function () { //creating a listening port, callback function
-    console.log('app is listening on port 3000');
+//Have endpoint of journal / practice
+//send a response from that endpoint (this is a practice route)
+//app.use('/journal', require('./controllers/journalcontroller'));
+//localhost:3000/journal
+app.use('/journal', journal);
+
+app.listen(3001, function () { //creating a listening port, callback function
+    console.log('app is listening on port 3001');
 });
 
