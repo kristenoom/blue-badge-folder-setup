@@ -12,7 +12,8 @@ app.use('/test', function (req, res) {
 });
 
 sequelize.sync();
-//sequelize.sync({force: true})
+//sequelize.sync({force: true});
+app.use(require('./middleware/headers'));
 
 app.use(express.json());
 //in order to use req.body middleware, we need to use a middleware function called express.json()
